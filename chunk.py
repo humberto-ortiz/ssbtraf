@@ -29,7 +29,9 @@ with fileinput.input() as f:
        value = parsed_json['value']
        if "content" in value and isinstance(value['content'], str):
            if value['content'].endswith(".box"):
-               print (value['author'], value['timestamp'])
+               print (value['author'],
+                          value['timestamp'],
+                          len(value["content"]))
 
 # looks like timestamps are in milliseconds (javascript)
 # >>> datetime.datetime.fromtimestamp(1438958104164/1000.0)
